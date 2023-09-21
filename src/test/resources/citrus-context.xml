@@ -44,9 +44,9 @@
                         auto-start="true"
                         timeout="15000"/>
 
-<!--    <citrus-ws:client id="soapClientHelper"-->
-<!--                      request-url="${urlSOAP}"-->
-<!--                      timeout="60000"/>-->
+    <citrus-ws:client id="soapClientHelper"
+                      request-url="${urlSOAP}"
+                      timeout="60000"/>
 
     <citrus-websocket:client id="wssHelperClient"
                              url="${urlWSS}"
@@ -57,6 +57,12 @@
             <citrus:schema id="DATAACCESS" location="classpath:wsdl/numberconversion.wsdl" />
         </citrus:schemas>
     </citrus:schema-repository>
+    <!--For SOAP 1.1-->
+    <bean id="messageFactory" class="org.springframework.ws.soap.saaj.SaajSoapMessageFactory">
+        <property name="soapVersion">
+            <util:constant static-field="org.springframework.ws.soap.SoapVersion.SOAP_11"/>
+        </property>
+    </bean>
 
     <bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper">
         <property name="serializationInclusion" value="NON_NULL"/>
