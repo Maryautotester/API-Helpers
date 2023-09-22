@@ -5,6 +5,8 @@ target/
 
 ### IntelliJ IDEA ###
 .idea/
+.com/
+.helpers/
 *.iws
 *.iml
 *.ipr

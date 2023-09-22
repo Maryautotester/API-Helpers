@@ -1,5 +1,5 @@
 
-package webservicesserver;
+package citrus.com.dataaccess.webservicesserver;
 
 import javax.xml.bind.annotation.*;
 import java.math.BigDecimal;

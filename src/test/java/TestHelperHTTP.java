@@ -1,6 +1,5 @@
-import behaviors.RestHelperBehavior;
+import citrus.behaviors.RestHelperBehavior;
 import com.consol.citrus.annotations.CitrusTest;
-import com.consol.citrus.context.TestContext;
 import com.consol.citrus.junit.spring.JUnit4CitrusSpringSupport;
 import org.junit.Test;
 

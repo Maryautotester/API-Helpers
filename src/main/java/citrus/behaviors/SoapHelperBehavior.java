@@ -1,24 +1,18 @@
-package behaviors;
-
-import com.consol.citrus.TestActionRunner;
-import com.consol.citrus.TestBehavior;
-import com.consol.citrus.context.TestContext;
-import features.CustomMarshaller;
-import webservicesserver.NumberToDollars;
-import webservicesserver.NumberToDollarsResponse;
-
-import java.math.BigDecimal;
+package citrus.behaviors;
 
 import static com.consol.citrus.ws.actions.SoapActionBuilder.soap;
 
+import citrus.com.dataaccess.webservicesserver.NumberToDollars;
+import citrus.com.dataaccess.webservicesserver.NumberToDollarsResponse;
+import citrus.features.CustomMarshaller;
+import com.consol.citrus.TestActionRunner;
+import com.consol.citrus.TestBehavior;
+import com.consol.citrus.context.TestContext;
+import java.math.BigDecimal;
 
 public class SoapHelperBehavior implements TestBehavior {
     public TestContext context;
 
-//    @Test
-//    @CitrusTest(name = "Получение информации о пользователе")
-//    public void getTestActions() {
-//        this.context = citrus.getCitrusContext().createTestContext();
     @Override
     public void apply(TestActionRunner testActionRunner) {
         CustomMarshaller<Class<NumberToDollars>> ptxRq = new CustomMarshaller<>();
@@ -30,9 +24,6 @@ public class SoapHelperBehavior implements TestBehavior {
                         .message()
                         .body(ptxRq.convert(NumberToDollars.class, getNumberToDollarsRequest(),
                                 "http://www.dataaccess.com/webservicesserver/", "NumberToDollars"))
-//                .body("<NumberToDollars xmlns=\"http://www.dataaccess.com/webservicesserver/\">\n" +
-//                        "      <dNum>15</dNum>\n" +
-//                        "    </NumberToDollars>")
         );
 
         testActionRunner.run(soap()
@@ -41,9 +32,6 @@ public class SoapHelperBehavior implements TestBehavior {
                         .message()
                         .body(ptxRs.convert(NumberToDollarsResponse.class, getNumberToDollarsResponse(),
                                 "http://www.dataaccess.com/webservicesserver/", "NumberToDollarsResponse"))
-//                .body("<?xml version=\"1.0\" encoding=\"utf-8\"?><m:NumberToDollarsResponse xmlns:m=\"http://www.dataaccess.com/webservicesserver/\">\n" +
-//                        "      <m:NumberToDollarsResult>fifteen dollars</m:NumberToDollarsResult>\n" +
-//                        "    </m:NumberToDollarsResponse>")
         );
     }
     public NumberToDollars getNumberToDollarsRequest() {

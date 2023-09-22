@@ -10,7 +10,7 @@ import com.consol.citrus.message.builder.ObjectMappingPayloadBuilder;
 import org.junit.Test;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpStatus;
-import pojo.data.UserList;
+import citrus.pojo.data.UserList;
 
 public class Stub_Test extends JUnit4CitrusSpringSupport {
     private TestContext context;

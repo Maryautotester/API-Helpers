@@ -1,4 +1,4 @@
-package features;
+package citrus.features;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 public class CustomMarshaller<T> {
-    public T generic;
+    private T generic;
 
     public String convert(T requestClass, Object requestData, String namespaseURI, String localPart) { //namespaseURI=http://oms.rt.ru/ , localPart=submitOrderRequest
         generic = requestClass;
@@ -30,7 +30,7 @@ public class CustomMarshaller<T> {
                 private StringBuilder string = new StringBuilder();
                 @Override
                 public void write(int b) throws IOException {
-                    this.string.append((char) b );
+                    this.string.append((char) b);
                 }
 
                 public String toString(){

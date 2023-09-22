@@ -1,12 +1,12 @@
-package behaviors;
+package citrus.behaviors;
+
+import static com.consol.citrus.http.actions.HttpActionBuilder.http;
 
 import com.consol.citrus.TestActionRunner;
 import com.consol.citrus.TestBehavior;
 import com.consol.citrus.context.TestContext;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpStatus;
-
-import static com.consol.citrus.http.actions.HttpActionBuilder.http;
 
 public class RestHelperBehavior implements TestBehavior {
     public TestContext context;

@@ -15,7 +15,7 @@ import org.openqa.selenium.WebDriver;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpStatus;
 import pages.OtusMainPage;
-import pojo.reqres.GetResponse;
+import citrus.pojo.reqres.GetResponse;
 
 @ExtendWith(UIExtensions.class)
 public class OtusMainPage_Test extends JUnit4CitrusSpringSupport {

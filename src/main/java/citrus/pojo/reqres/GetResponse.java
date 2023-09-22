@@ -1,7 +1,7 @@
-package pojo.reqres;
+package citrus.pojo.reqres;
 
-import pojo.data.Rate;
-import pojo.data.UserList;
+import citrus.pojo.data.Rate;
+import citrus.pojo.data.UserList;
 
 public class GetResponse {
     public UserList getResponseUserList() {
