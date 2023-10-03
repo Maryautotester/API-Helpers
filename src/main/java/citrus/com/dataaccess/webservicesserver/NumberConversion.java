@@ -17,7 +17,7 @@ import java.net.URL;
  *
  */
 @WebServiceClient(name = "NumberConversion",
-                  wsdlLocation = "file:/C:/Users/test/IdeaProjects/API-Helpers/src/test/resources/wsdl/numberconversion.wsdl",
+                  wsdlLocation = "file:/C:/Users/test/IdeaProjects/API-Helpers/src/main/resources/wsdl/numberconversion.wsdl",
                   targetNamespace = "http://www.dataaccess.com/webservicesserver/")
 public class NumberConversion extends Service {
 
@@ -29,11 +29,11 @@ public class NumberConversion extends Service {
     static {
         URL url = null;
         try {
-            url = new URL("file:/C:/Users/test/IdeaProjects/API-Helpers/src/test/resources/wsdl/numberconversion.wsdl");
+            url = new URL("file:/C:/Users/test/IdeaProjects/API-Helpers/src/main/resources/wsdl/numberconversion.wsdl");
         } catch (MalformedURLException e) {
             java.util.logging.Logger.getLogger(NumberConversion.class.getName())
                 .log(java.util.logging.Level.INFO,
-                     "Can not initialize the default wsdl from {0}", "file:/C:/Users/test/IdeaProjects/API-Helpers/src/test/resources/wsdl/numberconversion.wsdl");
+                     "Can not initialize the default wsdl from {0}", "file:/C:/Users/test/IdeaProjects/API-Helpers/src/main/resources/wsdl/numberconversion.wsdl");
         }
         WSDL_LOCATION = url;
     }
